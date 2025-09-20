@@ -1,6 +1,7 @@
 package Metier;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public abstract class Operation {
 
@@ -15,5 +16,12 @@ public abstract class Operation {
         this.date = LocalDateTime.now();
         this.montant = montant;
         this.type = type;
+    }
+    public abstract String getDetails();
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return type + " - " + montant + " dh - " + date.format(formatter) + " - " + getDetails();
     }
 }
