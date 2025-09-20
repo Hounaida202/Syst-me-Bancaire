@@ -71,8 +71,15 @@ public class Menu {
         compte.ajouterCompte(comptes);
         System.out.println("un compte crée avec succes , votre code est : " + compte.getCode());
     }
-
-    private void afficherDetailsCompte() {
+    private Compte trouverCompte(String code) {
+        for (Compte compte : comptes) {
+            if (compte.getCode().equals(code)) {
+                return compte;
+            }
+        }
+        return null;
+    }
+    private void afficherSolde() {
         System.out.println("\n afficher les details");
 
         String code = helper.lireString(scanner, "Code du compte : ");
@@ -124,7 +131,7 @@ public class Menu {
         versement.faireVersement(compte);
         System.out.println("Versement effectue . Nouveau solde : " + compte.getSolde() + " dh");
     }
-    private void afficherOperationsCompte() {
+    private void afficherlesOperations() {
 
         String code = helper.lireString(scanner, "Code du compte : ");
         Compte compte = trouverCompte(code);
