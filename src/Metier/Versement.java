@@ -16,4 +16,9 @@ public class Versement extends Operation {
         compte.setSolde(compte.getSolde() + montant);
         compte.getOperations().add(this);
     }
+
+    public String
+    getSource() {
+        return source;
+    }
 }
