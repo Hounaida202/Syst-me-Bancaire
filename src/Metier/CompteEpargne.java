@@ -9,4 +9,9 @@ public class CompteEpargne extends Compte {
     public CompteEpargne(double solde) {
         super(solde, "epargne");
     }
+
+    @Override
+    public void ajouterCompte(ArrayList<Compte> comptes) {
+        comptes.add(this);
+    }
 }
