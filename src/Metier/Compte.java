@@ -16,5 +16,6 @@ public abstract class Compte {
         this.type = type;
     }
     public abstract void ajouterCompte(ArrayList<Compte> comptes);
+    public abstract void afficherDetails();
 
 }
