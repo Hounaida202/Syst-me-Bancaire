@@ -13,4 +13,11 @@ public class CompteCourant extends Compte {
     public void ajouterCompte(ArrayList<Compte> comptes) {
         comptes.add(this);
     }
+    @Override
+    public void afficherDetails() {
+        System.out.println("---afficher le solde ");
+//        System.out.println("Code: " + code);
+        System.out.println("Solde: " + solde + " dh");
+//        System.out.println("Découvert: " + DECOUVERT + " dh");
+    }
 }
