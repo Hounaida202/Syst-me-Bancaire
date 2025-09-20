@@ -14,4 +14,14 @@ public class CompteEpargne extends Compte {
     public void ajouterCompte(ArrayList<Compte> comptes) {
         comptes.add(this);
     }
+
+
+
+    @Override
+    public void afficherDetails() {
+        System.out.println("---votre solde est :");
+//        System.out.println("Code: " + code);
+        System.out.println("Solde: " + solde + " dh");
+//        System.out.println("taux applique sur les compytes epargnes fixe : " + taux + "%");
+    }
 }
