@@ -18,6 +18,8 @@ public class CompteCourant extends Compte {
         System.out.println("---afficher le solde ");
 //        System.out.println("Code: " + code);
         System.out.println("Solde: " + solde + " dh");
-//        System.out.println("Découvert: " + DECOUVERT + " dh");
+//        System.out.println("decouvert: " + decouvert + " dh");
     }
+    public double getDecouvert() { return decouvert; }
+
 }
