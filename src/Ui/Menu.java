@@ -71,4 +71,16 @@ public class Menu {
         compte.ajouterCompte(comptes);
         System.out.println("un compte crée avec succes , votre code est : " + compte.getCode());
     }
+
+    private void afficherDetailsCompte() {
+        System.out.println("\n afficher les details");
+
+        String code = helper.lireString(scanner, "Code du compte : ");
+        Compte compte = trouverCompte(code);
+        if (compte != null) {
+            compte.afficherDetails();
+        } else {
+            System.out.println("compte n'existe pas");
+        }
+    }
 }

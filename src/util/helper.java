@@ -40,13 +40,8 @@ public class helper {
             System.out.println("montant non autorisée ");
         }
     }
-    private Compte trouverCompte(String code) {
-        for (Compte compte : comptes) {
-            if (compte.getCode().equals(code)) {
-                return compte;
-            }
-        }
-        return null;
-    }
+
+
+
 
 }
