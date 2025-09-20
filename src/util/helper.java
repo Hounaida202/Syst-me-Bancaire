@@ -3,6 +3,7 @@ package util;
 
 import Metier.Compte;
 import Metier.Retrait;
+import Metier.Versement;
 
 import java.util.Scanner;
 
@@ -65,6 +66,23 @@ public class helper {
         } else {
             System.out.println(" retrait impossible ");
         }
+    }
+
+    private void faireVersement() {
+        System.out.println("\n- effectuer un versement");
+
+        String code = helper.lireString(scanner, "Code du compte : ");
+        Compte compte = trouverCompte(code);
+
+        if (compte == null) {
+            System.out.println("Compte non trouvé ");
+            return;
+        }
+        double montant = helper.lireDouble(scanner, "Montant a verser : ");
+        String source = helper.lireString(scanner, "Source : ");
+        Versement versement = new Versement(montant, source);
+        versement.faireVersement(compte);
+        System.out.println("Versement effectue . Nouveau solde : " + compte.getSolde() + " dh");
     }
 
 }
