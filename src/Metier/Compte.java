@@ -18,4 +18,7 @@ public abstract class Compte {
     public abstract void ajouterCompte(ArrayList<Compte> comptes);
     public abstract void afficherDetails();
 
+    public String getCode() { return code; }
+    public double getSolde() { return solde; }
+    public ArrayList<Operation> getOperations() { return operations; }
 }
