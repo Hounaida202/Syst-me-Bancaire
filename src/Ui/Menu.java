@@ -51,4 +51,24 @@ public class Menu {
             }
         } while (choix != 7);
     }
+
+    private void ajouterCompte() {
+
+        double solde = helper.lireDouble(scanner, "solde  : ");
+
+        System.out.println("Type de compte :");
+        System.out.println("tapez 1 pour Compte Courant");
+        System.out.println("tapez 2 pour Compte Épargne");
+        int type = helper.verifierchoix(scanner, 1, 2);
+
+        Compte compte;
+        if (type == 1) {
+            compte = new CompteCourant(solde);
+        } else {
+            compte = new CompteEpargne(solde);
+        }
+
+        compte.ajouterCompte(comptes);
+        System.out.println("un compte crée avec succes , votre code est : " + compte.getCode());
+    }
 }
