@@ -25,4 +25,14 @@ public abstract class Compte {
     public void setSolde(double solde) { this.solde = solde; }
     public void setOperations(ArrayList<Operation> operations) { this.operations = operations; }
 
+
+    public void afficherOperations() {
+        if (operations.isEmpty()) {
+            System.out.println("pas encore d'operations");
+        } else {
+            for (Operation operation : operations) {
+                System.out.println(operation);
+            }
+        }
+    }
 }
