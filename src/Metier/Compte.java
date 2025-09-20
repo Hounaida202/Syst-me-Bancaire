@@ -21,4 +21,8 @@ public abstract class Compte {
     public String getCode() { return code; }
     public double getSolde() { return solde; }
     public ArrayList<Operation> getOperations() { return operations; }
+
+    public void setSolde(double solde) { this.solde = solde; }
+    public void setOperations(ArrayList<Operation> operations) { this.operations = operations; }
+
 }
