@@ -31,7 +31,7 @@ public class Menu {
                     ajouterCompte();
                     break;
                 case 2:
-                    afficherDetailsCompte();
+                    afficherSolde();
                     break;
                 case 3:
                     faireRetrait();
@@ -43,7 +43,7 @@ public class Menu {
                     faireVirement();
                     break;
                 case 6:
-                    afficherOperationsCompte();
+                    afficherlesOperations();
                     break;
                 case 7:
                     System.out.println("programme exité");
