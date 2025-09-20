@@ -7,4 +7,9 @@ public class Retrait extends Operation{
         this.destination = destination;
     }
 
+    @Override
+    public String getDetails() {
+        return destination;
+    }
+
 }
