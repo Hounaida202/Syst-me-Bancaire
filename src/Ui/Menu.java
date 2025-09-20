@@ -132,7 +132,42 @@ public class Menu {
         if (compte != null) {
             compte.afficherOperations();
         } else {
-            System.out.println("Erreur : Compte non trouvé !");
+            System.out.println("Compte non trouve");
+        }
+    }
+
+    private void faireVirement() {
+
+        // Compte source
+        String codeSource = helper.lireString(scanner, "Code du compte source : ");
+        Compte compteSource = trouverCompte(codeSource);
+
+        if (compteSource == null) {
+            System.out.println("Compte source non trouvé");
+            return;
+        }
+
+        // Compte destination
+        String codeDest = helper.lireString(scanner, "Code du compte destination : ");
+        Compte compteDest = trouverCompte(codeDest);
+
+        if (compteDest == null) {
+            System.out.println("Compte destination non trouvé");
+            return;
+        }
+
+        double montant = helper.lireDouble(scanner, "Montant a envoyer: ");
+
+        Retrait retrait = new Retrait(montant, "Virement vers " + compteDest.getCode());
+        boolean retraitReussi = retrait.faireRetrait(compteSource);
+
+        if (retraitReussi) {
+            Versement versement = new Versement(montant, "Virement depuis " + compteSource.getCode());
+            versement.faireVersement(compteDest);
+
+            System.out.println("Virement reussi ");
+        } else {
+            System.out.println("Virement impossible ");
         }
     }
 }
