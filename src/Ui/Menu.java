@@ -124,4 +124,15 @@ public class Menu {
         versement.faireVersement(compte);
         System.out.println("Versement effectue . Nouveau solde : " + compte.getSolde() + " dh");
     }
+    private void afficherOperationsCompte() {
+
+        String code = helper.lireString(scanner, "Code du compte : ");
+        Compte compte = trouverCompte(code);
+
+        if (compte != null) {
+            compte.afficherOperations();
+        } else {
+            System.out.println("Erreur : Compte non trouvé !");
+        }
+    }
 }
