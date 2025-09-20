@@ -1,6 +1,8 @@
 package util;
 
 
+import Metier.Compte;
+
 import java.util.Scanner;
 
 public class helper {
@@ -38,6 +40,13 @@ public class helper {
             System.out.println("montant non autorisée ");
         }
     }
-
+    private Compte trouverCompte(String code) {
+        for (Compte compte : comptes) {
+            if (compte.getCode().equals(code)) {
+                return compte;
+            }
+        }
+        return null;
+    }
 
 }
