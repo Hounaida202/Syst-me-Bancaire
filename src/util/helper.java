@@ -43,6 +43,9 @@ public class helper {
         }
     }
 
-
+    public static String lireString(Scanner scanner, String message) {
+        System.out.print(message);
+        return scanner.nextLine();
+    }
 
 }
